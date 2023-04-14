@@ -56,7 +56,6 @@ function makePanel({title, content}) {
   const openButton = document.createElement('button');
   const closeButton = document.createElement('button');
 
-
   // TASK 6- Setup the structure of our elements
   /*
     <div>                   // panel
@@ -130,3 +129,19 @@ panelElements.forEach(elem => accordion.appendChild(elem));
 // and returns an anchor tag with the right href, class and textContent.
 // Loop over the 'linkData' in the data folder, generate anchor tags
 // and append them to the nav.
+
+function linkMaker({href, className, text}){
+  const anchor = document.createElement('a');
+
+anchor.href = href;
+anchor.className = className;
+anchor.textContent = text;
+return anchor;
+}
+
+const linkAnchor = document.querySelector('nav');
+
+linkData.forEach(links => {
+  const linkElement = linkMaker(links);
+  linkAnchor.appendChild(linkElement);
+})
