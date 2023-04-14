@@ -6,18 +6,34 @@ const imageData = [
   { imageURL: 'https://images.dog.ceo/breeds/mastiff-bull/n02108422_3398.jpg' },
   { imageURL: 'https://images.dog.ceo/breeds/mastiff-bull/n02108422_2947.jpg' },
 ]
+function makeImage (imgURL) {
+  const image = document.createElement("img");
+  image.src = imgURL.imageURL;
+  return image;
+ }
+imageData.forEach(imgObj => {
+  makeImage(imgObj); 
+  // document.body.prepend(imgElement);
+});
+
 
 
 // TASK 1- Import the data we need to "hydrate" our component.
 //  On the one hand, the default export from data/panelData.js
 //  On the other hand, the default export from data/constants.js
 //  Destructure `open` and `close` from the constants
-
+import panelData from "./data/panelData";
+import linkData from "./data/linkData";
+import constants from "./data/constants";
 
 // TASK 2- Verify our imports using log statements
-console.log() // log the panelData
-console.log() // log the open arrow
-console.log() // log the close arrow
+console.log(panelData); // log the panelData
+console.log(linkData) // log the open arrow
+console.log(constants) // log the close arrow
+
+const {open, close} = constants;
+console.log(open);
+console.log(close);
 
 
 // TASK 3- Comment out the div.panel from index.html and grab its parent element.
